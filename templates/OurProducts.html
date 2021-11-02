@@ -1,0 +1,296 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- Meta Tags -->
+    <meta charset="UTF-8">
+
+    <!-- Theme Page Title -->
+    <title>Sapa Surgical Care Pvt. Ltd.</title>
+
+    <!-- favicon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="{% static 'images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--css link-->
+    <link href="{% static 'css/menuzord/menuzord.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/revolution-slider.css' %}" rel="stylesheet">
+    <link href="{% static 'css/reset-style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+    <link href="{% static 'css/color/themecolor.css' %}" rel="stylesheet" id="colorswitcher">
+
+</head>
+
+<body>
+
+    <!--wrapper start-->
+    <div class="wrapper">
+
+        <!-- Start Main Header -->
+        <header class="mega-header">
+            <div class="header-top">
+
+                <div class="container">
+                    <div class="row clearfix">
+                        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                            <a class="logo" href="{% url 'index' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" title="Medical"></a>
+                        </div>
+
+                        <div class="col-lg-7 col-md-7 col-sm-12 header-top-widget headerwidget-style2">
+                            <div class="header-widget">
+                                <div class="iconbox-widget">
+                                    <div class="icon">
+                                        <i class="flaticon-telephone-symbol-button"></i>
+                                    </div>
+                                    <div class="box-contenet">
+                                        <h5 class="title"><a href="tel:+919927275691">India</a></h5>
+                                        <p class="sub-title"><a href="tel:+919927275691">+91-9927275691 </a></p>
+                                    </div>
+                                </div>
+
+                                <div class="iconbox-widget">
+                                    <div class="box-contenet">
+                                        <h5 class="title"><a href="tel:+19023380167">Canada</a></h5>
+                                        <p class="sub-title"><a href="tel:+19023380167">+1 (902) 338-0167</a></p>
+                                    </div>
+                                </div>
+                                <div id="google_translate_element"></div>
+
+                                <script type="text/javascript">
+                                    function googleTranslateElementInit() {
+                                        new google.translate.TranslateElement(
+                                            { pageLanguage: 'en' },
+                                            'google_translate_element'
+                                        );
+                                    }
+                                </script>
+
+                                <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+        </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--Header Main-->
+            <div class="header-main">
+                <div class="container">
+                    <div class="row clearfix">
+                        <!--Main Menu-->
+                        <div class="mega-menu col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <nav id="menuzord" class="menuzord menuzord-responsive">
+                                <ul class="menuzord-menu">
+                                    <li><a href="{% url 'index' %}">Home</a></li>
+                                    <li><a href="{% url 'about' %}">About</a></li>
+                                    <li class="active"><a>Our Products</a></li>
+                                    <li><a href="{% url 'enquiry' %}">Send Enquiry</a></li>
+                                    <li><a href="{% url 'contact' %}">Contact Us</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                        <!--Main Menu End-->
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--End Main Header -->
+     
+        <!--Services Section Start-->
+        <section class="eo_pt co_pb">
+            <div class="container">
+
+
+
+                <div class="row">
+                    <div class="col-md-12 section-title text-center">
+                        <h1 class="title">Our <span>Products</span></h1>
+                    </div>
+                </div>
+
+                <div class="row services-style4">
+                    {% for product in products %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-post">
+                            <a href="{% url 'product' product.sno %}">
+                                <div class="thumb" style="height:169px">
+                                    <img src="{{ product.Image.url }}" alt="" height="170px">
+                                </div>
+                                <div class="icon-box">
+                                    <i class="flaticon-medical icon"></i>
+                                </div>
+                                <div class="content">
+                                    <h5 class="title">{{ product.Product_Name }} </h5>
+
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <!--Services Section End-->
+
+        <div style="padding:30px">
+            <h5>
+                <center> <strong>***PLEASE CONTACT US FOR OTHER PRODUCTS ENQUIRY***</strong></center>
+            </h5>
+        </div>
+
+
+
+    </div>
+    <!--Main Content end-->
+
+    <!-- Footer Start-->
+    <footer class="footer-section">
+
+        <div class="footer-copyright">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <p class="copy-right">© Copyright 2021 - <a href="#" target="_blank">Sapa Surgical Care Pvt.
+                                Ltd. </a>| all right reserved </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--Footer end-->
+
+    <!-- Start Menu Switcher -->
+
+
+    <!-- Side Menu-->
+
+
+    <!--Scroll to top-->
+    <div class="scroll-to-top"><span class="fa fa-arrow-up"></span></div>
+    <div id="mybutton">
+        <button type="button" class="btn btn-info btn-lg feedback" data-toggle="modal" data-target="#myModal">Quick
+            Enquiry</button>
+    </div>
+    <!-- Modal -->
+    <div class="modal " id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Quick Enquiry</h4>
+                </div>
+                <div class="modal-body">
+                    <form method="post" action="submit.php">
+                        <div class="row clearfix">
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group-inner">
+                                            <div class="icon-box"><label for="your-name">Your Name</label></div>
+                                            <div class="field-outer">
+                                                <input type="text" name="name" id="name" required
+                                                    data-validation-required-message="Please enter your name.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group-inner">
+                                            <div class="icon-box"><label for="your-email">Your Email</label></div>
+                                            <div class="field-outer">
+                                                <input type="email" name="email" id="email" required
+                                                    data-validation-required-message="Please enter your email address.">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group-inner">
+                                            <div class="icon-box"><label for="your-phone">Contact No.</label></div>
+                                            <div class="field-outer">
+                                                <input type="text" name="phone" id="phone" required
+                                                    data-validation-required-message="Please enter your phone number.">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <div class="form-group-inner">
+                                            <div class="icon-box"><label for="your-phone">Your Requirement</label></div>
+                                            <textarea name="message" id="message" required
+                                                data-validation-required-message="Please enter a message."></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-11 pull-right">
+                                <div class="row">
+                                    <input name="submit" type="submit" value="SUBMIT">
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    <!--wrapper end-->
+    <style type="text/css">
+        .feedback {
+            background-color: #31B0D5;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 4px;
+            border-color: #46b8da;
+        }
+
+        #mybutton {
+            position: fixed;
+            bottom: 50%;
+            right: 0px;
+            z-index: 10000;
+        }
+    </style>
+    <!--Jquery Script-->
+    <script src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/menuzord.js' %}"></script>
+    <script src="{% static 'js/jPushMenu.js' %}"></script>
+    <script src="{% static 'js/revolution.min.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <!-- validate -->
+    <script src="{% static 'js/validate.js' %}"></script>
+    <!-- jQuery ui js -->
+    <script src="{% static 'js/jquery-ui-1.11.4/jquery-ui.js' %}"></script>
+    <!-- appear js -->
+    <script src="{% static 'js/jquery.appear.js' %}"></script>
+    <!-- isotope -->
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <!-- count to -->
+    <script src="{% static 'js/jquery.countTo.js' %}"></script>
+    <!-- fancybox -->
+    <script src="{% static 'js/jquery.fancybox.pack.js' %}"></script>
+    <!-- easing -->
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/rev-custom.js' %}"></script>
+    <script src="{% static 'js/customcollection.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+
+</body>
+
+</html>
