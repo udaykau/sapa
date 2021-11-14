@@ -23,11 +23,19 @@
 <link href="{% static 'css/revolution-slider.css' %}" rel="stylesheet">
 <link href="{% static 'css/reset-style.css' %}" rel="stylesheet">
 <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+<link href="{% static 'css/message.css' %}" rel="stylesheet">
 <link href="{% static 'css/color/themecolor.css' %}" rel="stylesheet" id="colorswitcher">
 
 </head>
 
 <body>
+			<!-- Messages ---------->
+{% for message in messages %}
+            <div class="alert">
+  <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
+  <b>Sucess! </b>Our Representative will Contact you Shortly.
+</div>
+{% endfor %}
 
 <!--wrapper start-->
 <div class="wrapper">
@@ -185,8 +193,7 @@
 				<div class="row">
 					<div class="col-md-12 section-title text-center">
 						<h1 class="title ff-lato fw-600"><span>Welcome To Sapa Surgical Care Pvt. Ltd.</span></h1>
-					  <p class="text-justify">Established in the year 2021, we "Sapa Surgical Care Pvt. Ltd." are dealing in surgical products. <b>We are the sister concern business of Ajay Surgical.</b> We have gradually marked place amongst the top companies dealing in Medical Products. The high demand of these Medical Products has led us to the inception and we have been successfully catering to the requirements of the clients residing across the globe. The comprehensive range of Medical Products includes, Disposable Surgical Products The products offered by us include Face Mask, Surgeon Cap, Bouffant Cap, Surgeon Hood Cap (Monkey Cap) Non-Woven, Latex Examination Powdered Gloves, Latex Examination Powdered free Gloves, Latex Surgical Gloves, Nitrile Gloves, Non-Woven Shoe Cover etc. Our warehouse is categorized into various sections in order to store the products as per their category. Our warehousing team is well-experienced and trained in standard warehousing procedures to handle all these chemicals. We also take into consideration the valuable feedback of our clients in order to improve our product quality.<br><br>
-					Sachin Chaudhary and Paras Parashar as Managing Director. we have gained huge success across the nation. Due to her sharp business policies and wide knowledge, we have weaved through the intense challenges of this domain.</p>
+					  <p class="text-justify">Established in the year 2021, we "Sapa Surgical Care Pvt. Ltd." are dealing in surgical products. <b>We are the sister concern business of Ajay Surgical.</b> We have gradually marked place amongst the top companies dealing in Medical Products. The high demand of these Medical Products has led us to the inception and we have been successfully catering to the requirements of the clients residing across the globe. The comprehensive range of Medical Products includes, Disposable Surgical Products, Face Mask, Surgeon Cap, Bouffant Cap, Surgeon Hood Cap (Monkey Cap) Non-Woven, Latex Examination Powdered Gloves, Latex Examination Powdered free Gloves, Latex Surgical Gloves, Nitrile Gloves, Non-Woven Shoe Cover etc. Our warehouse is categorized into various sections in order to store the products as per their category. Our warehousing team is well-experienced and trained in standard warehousing procedures to handle all these chemicals. We also take into consideration the valuable feedback of our clients in order to improve our product quality.<br><br></p>
 					</div>
 				</div>
                 

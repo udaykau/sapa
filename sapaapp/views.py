@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 import requests
+from django.contrib import messages
 from .models import Querie, Product
 from requests.packages import urllib3
 urllib3.disable_warnings()
@@ -24,12 +25,14 @@ def enquiry(request):
         message = request.POST['message']
         data = Querie(Name=name, Email=email, Phone=phone, Message=message)
         data.save()
+        messages.error(request, "Our representative will Contact you shortly.")
+        return redirect('index')
     return render(request, 'enquiry.html')
 
 
 def products(request):
     id = Product.objects.filter(Active=True)
-    return render(request, 'Ourproducts.html', {'products': id})
+    return render(request, 'OurProducts.html', {'products': id})
 
 
 def about(request):
