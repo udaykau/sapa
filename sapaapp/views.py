@@ -42,6 +42,6 @@ def product(request, sno):
         Features = id.Features.split(';')
         Instructions = id.Instructions.split(';')
         data = {"product": id, 'Feature': Features, 'Instruction': Instructions}
-        return render(request, 'product.html', data)
+        return render(request, 'Product.html', data)
     else:
         return redirect("index")
