@@ -4,6 +4,9 @@ from django.contrib import messages
 from .models import Querie, Product
 from requests.packages import urllib3
 urllib3.disable_warnings()
+from django.conf import settings
+from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 requests.packages.urllib3.util.ssl_.DEFAULT_CIPHERS = 'ALL:@SECLEVEL=1'
 
 
@@ -25,6 +28,20 @@ def enquiry(request):
         message = request.POST['message']
         data = Querie(Name=name, Email=email, Phone=phone, Message=message)
         data.save()
+        send_mail(
+            'Thanks for Submitting your enquiry to us.',
+            'Our Representative will be in contact with you soon.',
+            'info@sapacares.com',
+            [email],
+            fail_silently=True,
+        )
+        send_mail(
+            'Query from '+ name,
+            'Email: '+email+'\nPhone: '+phone+'\nMessage: '+message,
+            'info@sapacares.com',
+            ['info@sapacares.com'],
+            fail_silently=True,
+        )
         messages.error(request, "Our representative will Contact you shortly.")
         return redirect('index')
     return render(request, 'enquiry.html')
